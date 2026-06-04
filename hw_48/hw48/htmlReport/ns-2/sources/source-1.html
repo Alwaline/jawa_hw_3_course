@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > OrderController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">ru.itis.hw48.domains.orders.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: OrderController (ru.itis.hw48.domains.orders.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package ru.itis.hw48.domains.orders.controller;
+&nbsp;
+&nbsp;import jakarta.validation.Valid;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;import ru.itis.hw48.domains.orders.dto.NewOrderDto;
+&nbsp;import ru.itis.hw48.domains.orders.dto.OrderDto;
+&nbsp;import ru.itis.hw48.domains.orders.service.OrderService;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/api/v1/orders&quot;)
+&nbsp;public class OrderController {
+&nbsp;    private final OrderService orderService;
+&nbsp;
+<b class="fc">&nbsp;    public OrderController(OrderService orderService) {this.orderService = orderService;}</b>
+&nbsp;
+&nbsp;    @PostMapping
+<b class="fc">&nbsp;    public OrderDto createOrder(@RequestBody @Valid NewOrderDto newOrder) {return orderService.createOrder(newOrder);}</b>
+&nbsp;
+&nbsp;    @GetMapping(&quot;/{order-id}&quot;)
+&nbsp;    public OrderDto getOrder(@PathVariable(&quot;order-id&quot;) Long orderId) {
+<b class="fc">&nbsp;        return orderService.getOrderById(orderId);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-06-01 13:49</div>
+</div>
+</body>
+</html>

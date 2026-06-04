@@ -1,0 +1,13 @@
+POST localhost/api/v1/users
+Content-Type: application/json
+
+{
+  "lastName": "Sidikov",
+  "email": "sidikov@gmail.com",
+  "password": "qwerty007",
+  "age": -100
+}
+
+###
+
+GET localhost/api/v1/users/6
